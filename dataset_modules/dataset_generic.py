@@ -106,12 +106,13 @@ class Generic_WSI_Classification_Dataset(Dataset):
             patient_labels.append(label)
         
         self.patient_data = {'case_id':patients, 'label':np.array(patient_labels)}
-    
+        
     @staticmethod
     def df_prep(data, label_dict, ignore, label_col):
         if label_col != 'label':
             data['label'] = data[label_col].copy()
 
+        # Exclure les labels à ignorer
         mask = data['label'].isin(ignore)
         data = data[~mask]
         data.reset_index(drop=True, inplace=True)
@@ -122,19 +123,16 @@ class Generic_WSI_Classification_Dataset(Dataset):
         # Mise à jour des labels avec le dictionnaire
         for i in data.index:
             key = data.loc[i, 'label']
-            data.at[i, 'label'] = label_dict[key]
+        
+            # Vérifier si la clé existe dans le dictionnaire label_dict
+            if key not in label_dict:
+                print(f"Erreur : La clé {key} dans le label est absente du dictionnaire label_dict.")
+                # Tu peux soit assigner une valeur par défaut, soit gérer l'erreur autrement
+                data.at[i, 'label'] = -1  # Par exemple, assigner une valeur par défaut (à ajuster selon ton besoin)
+            else:
+                data.at[i, 'label'] = label_dict[key]
 
         return data
-
-    
-    
-     
-    
-    
-    
-    
-    
-    
     
     def filter_df(self, df, filter_dict={}):
         if len(filter_dict) > 0:
