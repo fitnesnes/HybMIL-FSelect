@@ -76,7 +76,7 @@ if args.task == 'task_1_tumor_vs_normal':
                             data_dir= os.path.join(args.data_root_dir, 'tumor_vs_normal_resnet_features'),
                             shuffle = False, 
                             print_info = True,
-                            label_dict = {'normal_tissue':0, 'tumor_tissue':1},
+                            label_dict = {0:0, 1:1},
                             patient_strat=False,
                             ignore=[])
 
