@@ -69,14 +69,20 @@ def compute_from_patches(wsi_object, img_transforms, feature_extractor=None, cla
 
             if attn_save_path is not None:
                 A = model(features, attention_only=True)
-           
-                if A.size(0) > 1: #CLAM multi-branch attention
+               
+                if A.size(0) > 1:  # CLAM multi-branch attention
                     A = A[clam_pred]
 
                 A = A.view(-1, 1).cpu().numpy()
 
                 if ref_scores is not None:
+                    ref_scores = np.array(ref_scores).flatten()  # Aplatir ref_scores pour le rendre compatible
                     for score_idx in range(len(A)):
+                        # Comparer chaque élément de A[score_idx] avec ref_scores aplati
+                        print(f"Shape of A[score_idx]: {A[score_idx].shape}")
+                        print(f"Shape of ref_scores: {ref_scores.shape}")
+                        
+                        # Calculer le percentile pour chaque score dans A[score_idx] en fonction de ref_scores
                         A[score_idx] = score2percentile(A[score_idx], ref_scores)
 
                 asset_dict = {'attention_scores': A, 'coords': coords}
