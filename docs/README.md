@@ -135,15 +135,6 @@ Encadrée par **Pr. Abdelali Elmoufidi**
 
 ---
 
-## 9. Citation
 
-```bibtex
-@mastersthesis{skhounate2025hybmil,
-  title = {HybMIL-FSelect: Développement d'une approche hybride pour la classification faiblement supervisée de lames WSI},
-  author = {Nouhayla Skhounate},
-  school = {Université Sultan Moulay Slimane – FST Béni Mellal},
-  year = {2025}
-}
-```
 
 
