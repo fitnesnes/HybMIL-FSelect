@@ -18,7 +18,6 @@ Ce dépôt contient les scripts, modules et figures associés à l’approche **
 </p>
 
 ---
-
 ## 2. Structure du projet
 
 ├── dataset_csv/ # Fichiers CSV d’annotations
@@ -95,12 +94,18 @@ python create_heatmaps.py --model_path ./checkpoints/fold_1.pth
 
 | Métrique   | Moyenne ± Écart-type (10-fold CV) |
 |------------|------------------------------------|
-| Accuracy   | 93.3% ± 8.6%                       |
-| F1-score   | 85.5% ± 19.2%                      |
-| AUC        | 94.8% ± 7.7%                       |
+| Accuracy   | 0.933 ± 0.086                       |
+| F1-score   | 0.855 ± 0.192                       |
+| AUC        | 0.948 ± 0.077                       |
 
 <p align="center">
-  <img src="docs/2beccbfc-c380-4ccc-b9eb-0383a72abd44.png" alt="Cartes d’attention WSI" width="650">
+  <img src="C3L-03262-22_blockmap.png" alt="Cartes d’attention WSI" width="650">
+</p>
+<p align="center">
+  <img src="C3L-03262-22_0.5_roi_0_blur_0_rs_1_bc_0_a_0.4_l_1_bi_0_-1.0.jpg" alt="Cartes d’attention WSI" width="650">
+</p>
+<p align="center">
+  <img src="C3L-01663-21_0.5_roi_0_blur_0_rs_1_bc_0_a_0.4_l_1_bi_0_-1.0.jpg" alt="Cartes d’attention WSI" width="650">
 </p>
 
 ---
