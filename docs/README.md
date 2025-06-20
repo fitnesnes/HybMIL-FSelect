@@ -19,9 +19,7 @@ Ce dépôt contient les scripts, modules et figures associés à l’approche **
 
 ---
 ## 2. Structure du projet
-
 <pre> 
-  
 ├── dataset_csv/ # Fichiers CSV d’annotations 
 ├── dataset_modules/ # Prétraitement et loaders
 ├── heatmaps/ # Cartes d’attention générées 
@@ -36,8 +34,7 @@ Ce dépôt contient les scripts, modules et figures associés à l’approche **
 ├── filter_features_l2_kmeans.py 
 ├── create_heatmaps.py # Visualisation attention 
 ├── create_splits_seq.py # K-fold splits 
-└── tumor_vs_normal_dummy_clean.csv 
-  
+└── tumor_vs_normal_dummy_clean.csv  
 </pre>
 ---
 
@@ -57,6 +54,10 @@ Ce dépôt contient les scripts, modules et figures associés à l’approche **
 ```bash
 python create_patches_fp.py --source ./images --save_dir ./patches
 ```
+<p align="center">
+  <img src="decoupage de tuile.png" alt="Pipeline HybMIL-FSelect" width="700">
+</p>
+
 ## Étape 2 : Encodage visuel
 
 ```bash
