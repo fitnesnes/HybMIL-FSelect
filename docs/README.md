@@ -22,7 +22,7 @@ Ce dépôt contient les scripts, modules et figures associés à l’approche **
 
 <pre> 
   
- ├── dataset_csv/ # Fichiers CSV d’annotations 
+├── dataset_csv/ # Fichiers CSV d’annotations 
 ├── dataset_modules/ # Prétraitement et loaders
 ├── heatmaps/ # Cartes d’attention générées 
 ├── models/ # Implémentation de CLAM_MB 
