@@ -54,6 +54,7 @@ Ce dépôt contient les scripts, modules et figures associés à l’approche **
 
 ```bash
 python create_patches_fp.py --source ./images --save_dir ./patches
+```
 ## Étape 2 : Encodage visuel
 
 ```bash
