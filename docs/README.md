@@ -1,35 +1,27 @@
-# HybMIL-FSelect : Classification faiblement supervisée des images WSI
+# HybMIL-FSelect
 
-Ce projet propose une méthode de classification automatique des lames histologiques entières (WSI) sous supervision faible. Il repose sur une approche hybride combinant :
+**HybMIL-FSelect** est une pipeline modulaire et faiblement supervisée, conçue pour la classification binaire des lames histologiques numériques (*Whole Slide Images*, WSI). Elle combine un encodeur visuel pré-entraîné (**UNI**), une phase de sélection de caractéristiques (norme L2 + clustering KMeans) et un classificateur attentionnel basé sur le **Multiple Instance Learning** (MIL) via le modèle **CLAM_MB**.
 
-- Un encodage visuel avec le modèle pré-entraîné UNI
-- Un filtrage stratégique basé sur la norme L2 et le clustering KMeans
-- Une classification via le modèle CLAM_MB (Multiple Instance Learning)
+---
 
-## Pipeline proposé
+## 🧠 Présentation
 
-![Pipeline](images/pipeline_hybmil.png)
+Les WSIs sont des images médicales de très haute résolution, souvent annotées uniquement au niveau global, ce qui limite l’application des techniques supervisées classiques. **HybMIL-FSelect** propose une approche hybride légère et interprétable :
 
-## Résultats expérimentaux
+- 📌 Découpage des WSIs en tuiles (patches)
+- 🧠 Encodage des patches par le modèle **UNI**
+- 📉 Sélection des vecteurs informatifs (filtrage L2 + KMeans)
+- 🎯 Classification par attention avec **CLAM_MB**
 
-| Métrique    | Moyenne ± Écart-type |
-|-------------|----------------------|
-| Accuracy    | 93.3% ± 8.6%         |
-| AUC         | 94.8% ± 7.7%         |
-| F1-score    | 85.5% ± 19.2%        |
+<p align="center">
+  <img src="images/pipeline_hybmil.png" alt="Pipeline HybMIL-FSelect" width="700">
+</p>
 
-## Exemple de visualisation
+---
 
-![Cartes d'attention](images/attention_maps.png)
+## 🔧 Installation
 
-## Données utilisées
-
-- **Dataset** : SLN-Breast (TCIA)
-- 130 Whole Slide Images (WSI)
-- 78 patientes – annotations globales (présence/absence de métastase)
-
-## Auteur
-
-- Nouhayla Skhounate – Master AIDC, FST Béni Mellal
-- Encadrée par Pr. Abdelali Elmoufidi
-
+```bash
+git clone https://github.com/utilisateur/HybMIL-FSelect.git
+cd HybMIL-FSelect
+pip install -r requirements.txt
