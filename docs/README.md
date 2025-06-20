@@ -14,7 +14,7 @@ Ce dépôt contient les scripts, modules et figures associés à l’approche **
 4. 🎯 Classification finale par **Multiple Instance Learning**, via **CLAM_MB** (`main.py`)
 
 <p align="center">
-  <img src="docs/2a5ee7a7-4044-4337-84ce-49e4b41cfdb0.png" alt="Pipeline HybMIL-FSelect" width="700">
+  <img src="docs/pipeline HybMIL‑FSelec.drawio.png" alt="Pipeline HybMIL-FSelect" width="700">
 </p>
 
 ---
