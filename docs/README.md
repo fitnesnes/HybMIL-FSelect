@@ -59,18 +59,22 @@ python create_patches_fp.py --source ./images --save_dir ./patches
 
 ```bash
 python extract_features_fp.py --model UNI --input ./patches --output ./features
+```
 ## Étape 3 : Filtrage des vecteurs
 
 ```bash
 python filter_features_l2_kmeans.py --input ./features --k 5
+```
 ## Étape 4 : Entraînement CLAM_MB
 
 ```bash
 python main.py --task train --config configs/hybmil.yaml
+```
 ## Étape 5 : Génération de cartes d’attention
 
 ```bash
 python create_heatmaps.py --model_path ./checkpoints/fold_1.pth
+```
 
 ## 5. Résultats obtenus
 
