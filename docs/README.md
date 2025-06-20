@@ -1,24 +1,33 @@
-# HybMIL-FSelect – Classification Faiblement Supervisée des Lames WSI
 
-Ce dépôt contient les scripts, modules et figures associés à l’approche **HybMIL-FSelect**, développée dans le cadre d’un mémoire de Master à la FST Béni Mellal. L’objectif est de classifier automatiquement des images histopathologiques (*Whole Slide Images* – WSI) en contexte de supervision faible.
+# HybMIL-FSelect – Pipeline de classification faiblement supervisée pour Whole Slide Images
+
+Ce dépôt regroupe l’ensemble des scripts, configurations et ressources nécessaires à la mise en œuvre de l’approche HybMIL-FSelect. Cette méthode a été développée dans le cadre d’un mémoire de Master à la Faculté des Sciences et Techniques de Béni Mellal (FST-BM), Université Sultan Moulay Slimane.
 
 ---
 
-## 1. Vue d'ensemble
+## 1. Objectif
 
-**HybMIL-FSelect** repose sur une pipeline en quatre phases :
+L’objectif principal est de proposer une approche légère et interprétable permettant la classification binaire de lames histologiques numériques (WSI) à partir d’annotations globales, dans un contexte de supervision faible. L’approche repose sur l’articulation de modules de traitement visuel, de sélection de caractéristiques et d’apprentissage par Multiple Instance Learning.
 
-1. 📌 Découpage des WSIs en tuiles informatives (`create_patches_fp.py`)
-2. 🧠 Encodage visuel avec le modèle pré-entraîné **UNI** (`extract_features_fp.py`)
-3. 🧮 Filtrage des vecteurs par norme L2 et clustering KMeans (`filter_features_l2_kmeans.py`)
-4. 🎯 Classification finale par **Multiple Instance Learning**, via **CLAM_MB** (`main.py`)
+---
+
+## 2. Description de l’approche
+
+HybMIL-FSelect s’organise en quatre phases :
+
+1. Découpage des images WSI en tuiles informatives à l’aide d’OpenSlide et d’un filtrage tissulaire en HSV.
+2. Encodage visuel des tuiles avec le modèle pré-entraîné UNI, produisant des vecteurs de 1024 dimensions.
+3. Filtrage stratégique des vecteurs par norme L2 et regroupement KMeans, afin de réduire le bruit visuel.
+4. Classification finale par Multiple Instance Learning à l’aide du modèle CLAM_MB avec attention.
+
+L’ensemble du pipeline a été exécuté sur la plateforme Kaggle avec GPU T4, dans un environnement Python 3.8.
 
 <p align="center">
   <img src="pipeline HybMIL‑FSelec.drawio.png" alt="Pipeline HybMIL-FSelect" width="700">
 </p>
 
 ---
-## 2. Structure du projet
+## 3. Structure du projet
 <pre> 
 ├── dataset_csv/ # Fichiers CSV d’annotations 
 ├── dataset_modules/ # Prétraitement et loaders
@@ -38,7 +47,7 @@ Ce dépôt contient les scripts, modules et figures associés à l’approche **
 </pre>
 ---
 
-## 3. Données utilisées
+## 4. Données utilisées
 
 - 📌 **Dataset** : [SLN-Breast – TCIA](https://wiki.cancerimagingarchive.net/display/Public/TCGA-BRCA)
 - 130 lames `.svs` scannées à 20x
@@ -47,7 +56,7 @@ Ce dépôt contient les scripts, modules et figures associés à l’approche **
 
 ---
 
-## 4. Instructions de lancement
+## 5. Instructions de lancement
 
 ### Étape 1 : Découpage des lames
 
@@ -83,7 +92,7 @@ python create_heatmaps.py --model_path ./checkpoints/fold_1.pth
 </p>
 
 
-## 5. Résultats obtenus
+## 6. Résultats obtenus
 
 | Métrique   | Moyenne ± Écart-type (10-fold CV) |
 |------------|------------------------------------|
@@ -98,7 +107,7 @@ python create_heatmaps.py --model_path ./checkpoints/fold_1.pth
 
 ---
 
-## 6. Configuration requise
+## 7. Configuration requise
 
 - Python ≥ 3.8  
 - PyTorch ≥ 1.10  
@@ -111,7 +120,7 @@ python create_heatmaps.py --model_path ./checkpoints/fold_1.pth
 
 ---
 
-## 7. Références principales
+## 8. Références principales
 
 - Lu et al., *CLAM: Clustering-constrained Attention MIL* (2021)  
 - Chen et al., *UNI: A Universal Image Encoder for Histopathology* (2024)  
@@ -119,7 +128,7 @@ python create_heatmaps.py --model_path ./checkpoints/fold_1.pth
 
 ---
 
-## 8. Auteure
+## 9. Auteur
 
 **Nouhayla Skhounate**  
 Master Intelligence Artificielle et Informatique Digitale  
