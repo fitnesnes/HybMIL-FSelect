@@ -22,6 +22,6 @@ Les WSIs sont des images médicales de très haute résolution, souvent annotée
 ## 🔧 Installation
 
 ```bash
-git clone https://github.com/utilisateur/HybMIL-FSelect.git
+git clone https://github.com/fitnesnes/HybMIL-FSelect.git
 cd HybMIL-FSelect
 pip install -r requirements.txt
