@@ -20,8 +20,7 @@ Ce dépôt contient les scripts, modules et figures associés à l’approche **
 ---
 ## 2. Structure du projet
 
-<pre> ```bash ├── dataset_csv/ # Fichiers CSV d’annotations ├── dataset_modules/ # Prétraitement et loaders ├── heatmaps/ # Cartes d’attention générées ├── models/ # Implémentation de CLAM_MB ├── presets/ # Fichiers de configuration ├── topk/ # Extraction des tuiles top-attention ├── utils/, vis_utils/ # Fonctions utilitaires ├── wsi_core/ # Fonctions WSI & tiling ├── main.py # Script d’entraînement et test ├── create_patches_fp.py # Découpage en tuiles ├── extract_features_fp.py # Encodage UNI ├── filter_features_l2_kmeans.py ├── create_heatmaps.py # Visualisation attention ├── create_splits_seq.py # K-fold splits └── tumor_vs_normal_dummy_clean.csv ``` </pre>
-
+```bash ├── dataset_csv/ # Fichiers CSV d’annotations ├── dataset_modules/ # Prétraitement et loaders ├── heatmaps/ # Cartes d’attention générées ├── models/ # Implémentation de CLAM_MB ├── presets/ # Fichiers de configuration ├── topk/ # Extraction des tuiles top-attention ├── utils/, vis_utils/ # Fonctions utilitaires ├── wsi_core/ # Fonctions WSI & tiling ├── main.py # Script d’entraînement et test ├── create_patches_fp.py # Découpage en tuiles ├── extract_features_fp.py # Encodage UNI ├── filter_features_l2_kmeans.py ├── create_heatmaps.py # Visualisation attention ├── create_splits_seq.py # K-fold splits └── tumor_vs_normal_dummy_clean.csv ```
 ---
 
 ## 3. Données utilisées
