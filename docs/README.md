@@ -14,7 +14,7 @@ Ce dépôt contient les scripts, modules et figures associés à l’approche **
 4. 🎯 Classification finale par **Multiple Instance Learning**, via **CLAM_MB** (`main.py`)
 
 <p align="center">
-  <img src="docs/pipeline HybMIL‑FSelec.drawio.png" alt="Pipeline HybMIL-FSelect" width="700">
+  <img src="pipeline HybMIL‑FSelec.drawio.png" alt="Pipeline HybMIL-FSelect" width="700">
 </p>
 
 ---
@@ -133,7 +133,6 @@ Master Intelligence Artificielle et Informatique Digitale
 Université Sultan Moulay Slimane – FST Béni Mellal  
 Encadrée par **Pr. Abdelali Elmoufidi**
 
----
 
 
 
